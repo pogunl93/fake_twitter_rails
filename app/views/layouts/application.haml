@@ -15,7 +15,7 @@
 					%li 
 						=link_to "Home", root_path
 					%li 
-						%a{:href => "/profile_list"} Users		
+						=link_to "Users", user_index_path		
 					-if current_user.nil? 
 						%li 
 							=link_to "Sign Up", new_user_path

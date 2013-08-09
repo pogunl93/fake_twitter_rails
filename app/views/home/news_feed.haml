@@ -3,7 +3,7 @@
 	-if !tweet.tweet_data.nil?
 		%font{:size => "4em"}=tweet.tweet_data
 		%br
-		%font{:size => "2em"}=tweet.user.username
+		%a{:href => "/user/#{tweet.user.id.to_s}"}=tweet.user.username
 		%br
 		%font{:size => "1.5em"}=tweet.created_at.strftime("%e %b %Y %H:%m:%S%p")
 		%br

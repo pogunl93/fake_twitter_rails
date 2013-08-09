@@ -27,7 +27,7 @@ class UserController < ApplicationController
 	end 
 
 	def index
-
+		@users = User.all
 	end 
 
 	def create_tweet
