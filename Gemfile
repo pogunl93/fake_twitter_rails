@@ -24,6 +24,7 @@ gem 'haml'
 gem 'haml-rails'
 gem 'pg', :require => 'pg'
 gem 'bcrypt-ruby', :require => 'bcrypt'
+gem 'scoped_search', :require => 'scoped_search'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

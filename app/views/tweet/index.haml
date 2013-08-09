@@ -1,0 +1,5 @@
+-@tweets.each do |t|
+	=t.tweet_data
+	%br
+	%a{:href => "/user/#{t.user.id.to_s}"}=t.user.username
+	%br

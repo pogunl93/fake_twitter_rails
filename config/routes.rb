@@ -4,6 +4,7 @@ FakeTwitter::Application.routes.draw do
 
   get "sign_out" => "session#destroy", :as => "sign_out"
   post "new_tweet" => "user#create_tweet"
+  get "search" => "tweet#index"
 
   resources :user
   resources :session

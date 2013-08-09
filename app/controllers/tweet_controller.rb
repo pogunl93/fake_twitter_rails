@@ -1,15 +1,8 @@
 class TweetController < ApplicationController
 	layout "application"
 
-	def new 
+	def index 
+		@tweets = Tweet.where("tweet_data LIKE '%#{params[:search_query]}%'")
+	end
 
-	end 
-
-	def create 
-		@tweet = Tweet.create(:tweet_data => params[:tweet_data])
-		@user = User.find(params[:id])
-		@user.tweets << @tweet
-		redirect "/user/#{current_user.id.to_s}"
-	end 
-
-end 
+end
