@@ -23,12 +23,19 @@ class UserController < ApplicationController
 	end 
 
 	def show
-
+		@user = User.find(params[:id])
 	end 
 
 	def index
 
 	end 
+
+	def create_tweet
+		@tweet = Tweet.create(tweet_params)
+		@user = User.find(current_user.id.to_s)
+		@user.tweets << @tweet
+		redirect_to "/user/#{current_user.id.to_s}"
+	end
 
 	private
 
@@ -36,4 +43,7 @@ class UserController < ApplicationController
 		params.require(:user).permit :fname, :lname, :username, :email, :password, :bio, :url, :city, :state
 	end 
 
+	def tweet_params
+		params.require(:tweet).permit :tweet_data
+	end
 end 

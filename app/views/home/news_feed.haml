@@ -1,5 +1,11 @@
 %h2 What's going on in the world
 -@tweet.each do |tweet|
-	=tweet.tweet_data
-	%br
-	%br	
+	-if !tweet.tweet_data.nil?
+		%font{:size => "4em"}=tweet.tweet_data
+		%br
+		%font{:size => "2em"}=tweet.user.username
+		%br
+		%font{:size => "1.5em"}=tweet.created_at.strftime("%e %b %Y %H:%m:%S%p")
+		%br
+		%br
+	-else
