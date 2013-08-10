@@ -6,12 +6,14 @@ class UserController < ApplicationController
 	end 
 
 	def create
-		if User.create(user_params)
+		@user = User.create(user_params)
+		if @user.save
 			flash[:notice] = "Your account has been successfully created"
+			redirect_to root_path
 		else 
 			flash[:notice] = "There was a problem creating your account"
+			redirect_to new_user_path
 		end 
-		redirect_to root_path
 	end 
 
 	def edit 
@@ -24,6 +26,7 @@ class UserController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+		@tweets = Tweet.where(:user_id => params[:id])
 	end 
 
 	def index
@@ -34,6 +37,11 @@ class UserController < ApplicationController
 		@tweet = Tweet.create(tweet_params)
 		@user = User.find(current_user.id.to_s)
 		@user.tweets << @tweet
+		if @tweet.save
+			flash[:notice] = "Your tweet was created successfully"
+		else
+			flash[:notice] = "There was a problem creating your tweet"
+		end
 		redirect_to "/user/#{current_user.id.to_s}"
 	end
 

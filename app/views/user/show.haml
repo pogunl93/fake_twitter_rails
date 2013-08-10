@@ -7,6 +7,14 @@
 %br
 %h4 Location
 =@user.location
+%h4 Tweets
+-@tweets.each do |t|
+	-if !t.tweet_data.nil?
+		%font{:size => "4em"}=t.tweet_data 
+		%br
+		%font{:size => "1.5em"}=t.created_at.strftime("%e %b %Y %H:%m:%S%p")
+		%br
+	-else
 
 -if current_user == nil
 
