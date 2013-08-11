@@ -34,4 +34,6 @@ class User < ActiveRecord::Base
 		end
 	end 
 
+	scoped_search :on => [:fname, :lname, :username]
+
 end
