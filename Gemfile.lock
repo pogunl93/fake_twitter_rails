@@ -133,7 +133,7 @@ DEPENDENCIES
   jquery-rails
   pg
   rails (= 4.0.0)
-  rmagick
+  rmagick (= 2.13.2)
   sass-rails (~> 4.0.0)
   scoped_search
   sdoc
