@@ -34,6 +34,8 @@ class User < ActiveRecord::Base
 		end
 	end 
 
+	mount_uploader :image, ImageUploader
+
 	scoped_search :on => [:fname, :lname, :username]
 
 end
