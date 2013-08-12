@@ -27,6 +27,7 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'scoped_search', :require => 'scoped_search'
 gem 'carrierwave', :require => 'carrierwave'
 gem 'rmagick', :git => 'git://github.com/rmagick/rmagick.git'
+gem 'fog', :require => 'fog'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
